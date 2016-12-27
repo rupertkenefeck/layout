@@ -1,0 +1,21 @@
+#loading GPIO library and calling it GPIO
+import RPi.GPIO as GPIO
+
+
+#set the pin mode for the GPIOs
+GPIO.setmode(GPIO.BOARD)
+
+
+#Make a channel list
+chan_list = [3,5,7,11,13,15,19,21]
+
+#Set these as output channels (this will activate all of the relays)
+GPIO.setup(chan_list, GPIO.OUT)
+
+
+#Set a list to change
+change_list = [3]
+
+
+#set change list to LOW(0v) (this will turn on the relay(s))
+GPIO.output(change_list, GPIO.LOW)
